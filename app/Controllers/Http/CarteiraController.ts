@@ -4,6 +4,7 @@ import Carteira from 'App/Models/Carteira'
 
 export default class CarteirasController {
   public async index() {
+
     const carteiras = await Carteira.all()
 
     return carteiras
