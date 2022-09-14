@@ -22,7 +22,7 @@ export default class Investimento extends BaseModel {
   public quantidade: number
 
   @hasMany(() => Movimentacao, {
-    foreignKey: 'id_investimento'
+    foreignKey: 'id_investimento',
   })
   public movimentacao: HasMany<typeof Movimentacao>
 

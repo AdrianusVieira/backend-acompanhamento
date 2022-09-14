@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, belongsTo,BelongsTo,beforeCreate } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, belongsTo, BelongsTo, beforeCreate } from '@ioc:Adonis/Lucid/Orm'
 import { v4 as uuid } from 'uuid'
 import Carteira from './Carteira'
 import Fundo from './Fundo'
@@ -9,7 +9,7 @@ export default class Movimentacao extends BaseModel {
   @column({ isPrimary: true })
   public id: number
   @beforeCreate()
-  public static async createUUID (model:Movimentacao){
+  public static async createUUID(model: Movimentacao) {
     model.id = uuid()
   }
   @column()
@@ -28,17 +28,17 @@ export default class Movimentacao extends BaseModel {
   public id_investimento: string
 
   @belongsTo(() => Carteira, {
-    localKey: 'id_carteira'
+    localKey: 'id_carteira',
   })
   public carteira: BelongsTo<typeof Carteira>
 
   @belongsTo(() => Fundo, {
-    localKey: 'id_fundo'
+    localKey: 'id_fundo',
   })
   public fundo: BelongsTo<typeof Fundo>
 
   @belongsTo(() => Investimento, {
-    localKey: 'id_investimento'
+    localKey: 'id_investimento',
   })
   public investimento: BelongsTo<typeof Investimento>
 

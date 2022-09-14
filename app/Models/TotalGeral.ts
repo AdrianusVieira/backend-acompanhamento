@@ -1,7 +1,6 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, beforeCreate } from '@ioc:Adonis/Lucid/Orm'
 import { v4 as uuid } from 'uuid'
-import Movimentacao from './Movimentacao'
 
 export default class TotalGeral extends BaseModel {
   @column({ isPrimary: true })
