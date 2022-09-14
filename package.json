@@ -1,8 +1,6 @@
 {
-
   "name": "backend-acompanhamento",
   "version": "1.0.0",
-  "main": "server.ts",
   "private": true,
   "scripts": {
     "dev": "node ace serve --watch",
