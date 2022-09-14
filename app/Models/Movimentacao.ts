@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, belongsTo,BelongsTo,beforeCreate } from '@ioc:Adonis/Lucid/Orm'
-import Note from './Note'
 import { v4 as uuid } from 'uuid'
 import Carteira from './Carteira'
 import Fundo from './Fundo'
