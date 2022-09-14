@@ -20,9 +20,9 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
+// Route.get('/', async () => {
+//   return { hello: 'world' }
+// })
 
 //CARTEIRA
 Route.get('/carteira', 'CarteiraController.index')
@@ -51,7 +51,10 @@ Route.get('/movimentacao', 'MovimentacaoController.index')
 Route.get('/movimentacaocarteira/:id_carteira', 'MovimentacaoController.indexByCarteira')
 Route.get('/movimentacaotipo/:tipo', 'MovimentacaoController.indexByTipo')
 Route.get('/movimentacaofundo/:id_fundo', 'MovimentacaoController.indexByFundo')
-Route.get('/movimentacaoinvestimento/:id_investimento', 'MovimentacaoController.indexByInvestimento')
+Route.get(
+  '/movimentacaoinvestimento/:id_investimento',
+  'MovimentacaoController.indexByInvestimento'
+)
 Route.post('/movimentacao', 'MovimentacaoController.store')
 Route.put('/movimentacao/:id', 'MovimentacaoController.update')
 Route.delete('/movimentacao/:id', 'MovimentacaoController.destroy')
