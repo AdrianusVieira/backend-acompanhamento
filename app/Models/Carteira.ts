@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasMany, HasMany,beforeCreate } from '@ioc:Adonis/Lucid/Orm'
-import Note from './Note'
+import { BaseModel, column, hasMany, HasMany, beforeCreate } from '@ioc:Adonis/Lucid/Orm'
 import { v4 as uuid } from 'uuid'
 import Movimentacao from './Movimentacao'
 
@@ -8,7 +7,7 @@ export default class Carteira extends BaseModel {
   @column({ isPrimary: true })
   public id: number
   @beforeCreate()
-  public static async createUUID (model:Carteira){
+  public static async createUUID(model: Carteira) {
     model.id = uuid()
   }
   @column()
@@ -19,7 +18,7 @@ export default class Carteira extends BaseModel {
   public total: number
 
   @hasMany(() => Movimentacao, {
-    foreignKey: 'id_carteira'
+    foreignKey: 'id_carteira',
   })
   public movimentacao: HasMany<typeof Movimentacao>
 
